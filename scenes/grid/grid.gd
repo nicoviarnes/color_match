@@ -58,6 +58,8 @@ func check_for_match():
 	
 	if choice_one.color != choice_two.color:
 		print("No match")
+		choice_one.flip_timer.start()
+		choice_two.flip_timer.start()
 	else:
 		choice_one.resolve_match()
 		choice_two.resolve_match()
@@ -69,6 +71,8 @@ func check_for_match():
 func select_tile(tile):
 	if choice_one == null:
 		choice_one = tile
+		choice_one.flip_card()
 	if choice_two == null && tile != choice_one:
 		choice_two = tile
+		choice_two.flip_card()
 		check_for_match()

@@ -19,4 +19,4 @@ theme_override_constants/v_separation = 1
 columns = 2
 script = ExtResource("1_oiuwv")
 grid_object = ExtResource("2_it3y8")
-grid_size = 24
+grid_size = 4

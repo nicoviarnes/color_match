@@ -26,6 +26,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_ayi2v")
 
+[node name="Cardback" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Glow" type="ColorRect" parent="."]
 visible = false
 layout_mode = 1
@@ -36,6 +46,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="FlipTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="FlipTimer" to="." method="_on_flip_timer_timeout"]
