@@ -1,1 +1,5 @@
+res://scenes/grid/grid.tscn
+res://scenes/memory/memory.gd
+res://scenes/memory/memory.tscn
+res://scenes/grid/grid.gd
 res://readme.md

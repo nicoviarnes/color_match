@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7s2uchvbiygx"]
+
+[ext_resource type="Script" path="res://scenes/grid/grid.gd" id="1_oiuwv"]
+[ext_resource type="PackedScene" uid="uid://bo0trgq51mep1" path="res://scenes/memory/memory.tscn" id="2_it3y8"]
+
+[node name="Grid" type="GridContainer"]
+custom_minimum_size = Vector2(500, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+mouse_filter = 2
+theme_override_constants/v_separation = 1
+columns = 2
+script = ExtResource("1_oiuwv")
+grid_object = ExtResource("2_it3y8")
+grid_size = 24

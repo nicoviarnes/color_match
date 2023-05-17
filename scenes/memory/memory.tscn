@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo0trgq51mep1"]
+
+[ext_resource type="Script" path="res://scenes/memory/memory.gd" id="1_ayi2v"]
+[ext_resource type="Shader" path="res://assets/shaders/glow.gdshader" id="1_fs4w6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_44vw5"]
+shader = ExtResource("1_fs4w6")
+shader_parameter/glow_amount = 0.25
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+
+[node name="Memory" type="ColorRect"]
+material = SubResource("ShaderMaterial_44vw5")
+custom_minimum_size = Vector2(5, 5)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ayi2v")
+
+[node name="Glow" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

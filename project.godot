@@ -13,3 +13,11 @@ config_version=5
 config/name="Color Match"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/integer_division=0
+
+[display]
+
+window/stretch/mode="canvas_items"
