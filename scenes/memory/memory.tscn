@@ -1,15 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo0trgq51mep1"]
+[gd_scene load_steps=2 format=3 uid="uid://bo0trgq51mep1"]
 
 [ext_resource type="Script" path="res://scenes/memory/memory.gd" id="1_ayi2v"]
-[ext_resource type="Shader" path="res://assets/shaders/glow.gdshader" id="1_fs4w6"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_44vw5"]
-shader = ExtResource("1_fs4w6")
-shader_parameter/glow_amount = 0.25
-shader_parameter/glow_color = Color(1, 1, 1, 1)
 
 [node name="Memory" type="ColorRect"]
-material = SubResource("ShaderMaterial_44vw5")
 custom_minimum_size = Vector2(5, 5)
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,7 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="FlipTimer" type="Timer" parent="."]
 wait_time = 2.0

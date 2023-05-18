@@ -3,6 +3,9 @@ extends GridContainer
 @export var grid_object : PackedScene
 @export var grid_size : int
 
+@onready var flip_timer = $FlipTimer
+@onready var match_timer = $MatchTimer
+
 var possible_colors: Array = [
 	Color.AQUA,
 	Color.BLACK,
@@ -20,10 +23,11 @@ var grid_colors : Array = []
 var choice_one = null
 var choice_two = null
 
+var flipping : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	make_grid()
-
 
 func make_grid():
 	set_columns(grid_size)
@@ -42,7 +46,6 @@ func make_grid():
 
 	render_board()
 
-
 func render_board():
 	for color in grid_colors:
 		var new_grid_object = grid_object.instantiate()
@@ -50,29 +53,47 @@ func render_board():
 		new_grid_object.selected.connect(select_tile)
 		add_child(new_grid_object)
 
-
 func check_for_match():
-	if choice_two == null:
-		print("Waiting for second choice")
-		return
-	
 	if choice_one.color != choice_two.color:
 		print("No match")
-		choice_one.flip_timer.start()
-		choice_two.flip_timer.start()
-	else:
-		choice_one.resolve_match()
-		choice_two.resolve_match()
+		choice_one.set_mouse_input(false)
+		choice_two.set_mouse_input(false)
+		flip_timer.start()
+		return
 		
-	choice_one = null
-	choice_two = null
-
+	print("matched")
+	match_timer.start()
 
 func select_tile(tile):
+	if flipping:
+		return
+
 	if choice_one == null:
 		choice_one = tile
 		choice_one.flip_card()
-	if choice_two == null && tile != choice_one:
+		return
+
+	if choice_two == null and tile != choice_one:
 		choice_two = tile
 		choice_two.flip_card()
+		flipping = true
 		check_for_match()
+
+func settle_flip():
+	reset_choices()
+
+func match_found():
+	choice_one.resolve_match()
+	choice_two.resolve_match()
+	reset_choices()
+
+func reset_choices():
+	if choice_one:
+		choice_one.flip_card()
+		choice_one.set_mouse_input(true)
+	if choice_two:
+		choice_two.flip_card()
+		choice_two.set_mouse_input(true)
+	choice_one = null
+	choice_two = null
+	flipping = false

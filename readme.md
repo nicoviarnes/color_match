@@ -110,14 +110,13 @@ Component overview:
 		Functionality: Represents a colored object on the grid.
 		Responsibilities:
 			DONE - Stores the object's color and position.
-			Handles interactions and matches with neighboring objects.
-			Provides methods to remove or animate the object's disappearance.
+			DONE - Provides methods to remove or animate the object's disappearance.
 
 	Input Component:
 		Functionality: Handles user input for object selection.
 		Responsibilities:
-			Detects and processes user clicks or taps on objects.
-			Determines the selected object and triggers matching logic.
+			DONE - Detects and processes user clicks or taps on objects.
+			DONE - Determines the selected object and triggers matching logic.
 
 	Timer Component:
 		Functionality: Manages the countdown timer for each level.

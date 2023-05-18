@@ -2,3 +2,4 @@ res://scenes/grid/grid.tscn
 res://scenes/memory/memory.tscn
 res://scenes/memory/memory.gd
 res://scenes/grid/grid.gd
+res://assets/shaders/shadow.gdshader

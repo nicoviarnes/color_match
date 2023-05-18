@@ -20,3 +20,12 @@ columns = 2
 script = ExtResource("1_oiuwv")
 grid_object = ExtResource("2_it3y8")
 grid_size = 4
+
+[node name="FlipTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MatchTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="FlipTimer" to="." method="settle_flip"]
+[connection signal="timeout" from="MatchTimer" to="." method="match_found"]
