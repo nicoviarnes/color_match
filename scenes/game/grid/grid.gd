@@ -6,19 +6,23 @@ extends GridContainer
 @onready var flip_timer = $FlipTimer
 @onready var match_timer = $MatchTimer
 
+signal update_score(score, maxScore)
+
 var possible_colors: Array = [
-	Color.AQUA,
-	Color.BLACK,
-	Color.CYAN,
-	Color.DARK_GREEN,
+	Color.BLUE,
+	Color.PURPLE,
+	Color.GREEN,
+	Color.YELLOW,
+	Color.RED,
 	Color.DEEP_PINK,
-	Color.FIREBRICK,
-	Color.IVORY,
-	Color.LAWN_GREEN,
-	Color.LIGHT_BLUE
+	Color.ORANGE,
+	Color.WEB_PURPLE,
+	Color.MAROON,
+	Color.DARK_BLUE
 ]
 
 var grid_colors : Array = []
+var grid_size_half
 
 var choice_one = null
 var choice_two = null
@@ -33,7 +37,7 @@ func make_grid():
 	set_columns(grid_size)
 	
 	var grid_size_square = grid_size * grid_size
-	var grid_size_half = grid_size_square / 2
+	grid_size_half = grid_size_square / 2
 	
 	grid_colors.resize(grid_size_square)
 	
@@ -44,9 +48,13 @@ func make_grid():
 	
 	grid_colors.shuffle()
 
+	emit_signal("update_score", 0, grid_size_half)
 	render_board()
 
 func render_board():
+	for child in get_children():
+		if child.is_in_group("grid_item"):
+			child.queue_free()
 	for color in grid_colors:
 		var new_grid_object = grid_object.instantiate()
 		new_grid_object.color = color
@@ -86,6 +94,7 @@ func match_found():
 	choice_one.resolve_match()
 	choice_two.resolve_match()
 	reset_choices()
+	emit_signal("update_score", 1, grid_size_half)
 
 func reset_choices():
 	if choice_one:

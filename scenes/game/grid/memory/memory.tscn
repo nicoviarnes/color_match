@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo0trgq51mep1"]
+[gd_scene load_steps=2 format=3 uid="uid://b48xgs7jqifjq"]
 
-[ext_resource type="Script" path="res://scenes/memory/memory.gd" id="1_ayi2v"]
+[ext_resource type="Script" path="res://scenes/game/grid/memory/memory.gd" id="1_muwmu"]
 
-[node name="Memory" type="ColorRect"]
+[node name="Memory" type="ColorRect" groups=["grid_item"]]
 custom_minimum_size = Vector2(5, 5)
 anchors_preset = 8
 anchor_left = 0.5
@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_ayi2v")
+script = ExtResource("1_muwmu")
 
 [node name="Cardback" type="ColorRect" parent="."]
 layout_mode = 1

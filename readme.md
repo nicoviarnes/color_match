@@ -1,11 +1,11 @@
 	Game Mechanics:
-		- The game will present a grid of colored objects (e.g., squares, circles, or tiles) on the screen.
-		- The player's task is to click or tap on pairs of adjacent objects that have the same color to make them disappear.
-		- When a pair of matching objects is clicked, they should vanish from the grid, and the remaining objects should fall down to fill the empty space.
+		DONE - The game will present a grid of colored objects (e.g., squares, circles, or tiles) on the screen.
+		DONE - The player's task is to click or tap on pairs of adjacent objects that have the same color to make them disappear.
+		DONE - When a pair of matching objects is clicked, they should vanish from the grid, and the remaining objects should fall down to fill the empty space.
 		- The game can have different levels or stages, each with a progressively larger grid or more challenging time limits.
 
 	Game Elements:
-		- Colored objects: Create various colored sprites or shapes to represent the objects on the grid. Each object should have a specific color assigned to it.
+		DONE - Colored objects: Create various colored sprites or shapes to represent the objects on the grid. Each object should have a specific color assigned to it.
 		- Time limit: Set a countdown timer for each level to add a sense of urgency to the gameplay. The player must complete the level before time runs out.
 		- Score: Keep track of the player's score based on the number of matches they make. Display the score on the screen to provide feedback to the player.
 
@@ -126,11 +126,11 @@ Component overview:
 			Updates and displays the timer on the user interface.
 
 	Score Component:
-		Functionality: Manages the player's score.
+		DONE - Functionality: Manages the player's score.
 		Responsibilities:
-			Tracks and updates the score based on successful matches.
-			Provides methods to increment or reset the score.
-			Communicates with the user interface to display the score.
+			DONE - Tracks and updates the score based on successful matches.
+			Done - Provides methods to increment or reset the score.
+			DONE - Communicates with the user interface to display the score.
 
 	UI Component:
 		Functionality: Handles the user interface elements and interactions.

@@ -1,4 +1,8 @@
+res://
+res://scenes/ui/game_over
+res://scenes/game/level_timer
+res://scenes/ui
+res://scenes/game/score
+res://scenes/game
 res://assets/shaders
-res://scenes/grid
-res://scenes/memory
 C:/Users/Nico/code/godot_projects/color_match
