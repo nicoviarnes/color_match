@@ -1,0 +1,7 @@
+These are only suggestions:
+
+Cutter - can be used to remove a line
+Spatula - can be used to remove a square of 9 or more pieces
+Tongs - can be used to remove one piece
+whisk - to shuffle the board
+Rolling Pin - to remove several lines at once
