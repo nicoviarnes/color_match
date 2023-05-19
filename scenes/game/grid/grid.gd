@@ -57,8 +57,8 @@ func render_board():
 			child.queue_free()
 	for color in grid_colors:
 		var new_grid_object = grid_object.instantiate()
-		new_grid_object.color = color
-		new_grid_object.selected.connect(select_tile)
+#		new_grid_object.color = color
+#		new_grid_object.selected.connect(select_tile)
 		add_child(new_grid_object)
 
 func check_for_match():
