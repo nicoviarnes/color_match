@@ -7,7 +7,7 @@ extends Control
 signal out_of_time
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	remaining.text = str(int(timer.get_time_left()))
 
 

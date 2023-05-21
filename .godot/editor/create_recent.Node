@@ -1,9 +1,10 @@
-Sprite2D
+Timer
 TextureRect
+Sprite2D
+AnimationPlayer
+ColorRect
 Control
 Label
 Button
-Timer
 Node2D
-ColorRect
 GridContainer

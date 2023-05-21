@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2md12qc3eao2"]
+
+[ext_resource type="Texture2D" uid="uid://q78778tc0dk2" path="res://assets/cupcakes/cardback.png" id="2_fxea4"]
+[ext_resource type="Shader" path="res://assets/shaders/glow.gdshader" id="3_fy800"]
+[ext_resource type="Script" path="res://cupcake_test2.gd" id="6_e8lxw"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_whem8"]
+resource_local_to_scene = true
+frames = 5
+frame_1/duration = 1.0
+frame_2/duration = 1.0
+frame_3/duration = 1.0
+frame_4/duration = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71ulk"]
+shader = ExtResource("3_fy800")
+shader_parameter/glow_amount = 0.75
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+
+[node name="Cupcake" type="TextureRect" groups=["grid_item"]]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AnimatedTexture_whem8")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("6_e8lxw")
+
+[node name="Cardback" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_fxea4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Glow" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_71ulk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_fxea4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SmileTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BlinkTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="SmileTimer" to="." method="_on_smile_timer_timeout"]
+[connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bdmkqkis3pdab"]
 
 [ext_resource type="Script" path="res://scenes/game/grid/grid.gd" id="1_87n1l"]
-[ext_resource type="PackedScene" uid="uid://ci4xjq4jx6rx8" path="res://cupcake_test.tscn" id="2_wrsxx"]
+[ext_resource type="PackedScene" uid="uid://b2md12qc3eao2" path="res://cupcake_test2.tscn" id="2_cbxyw"]
 
 [node name="Grid" type="GridContainer"]
 custom_minimum_size = Vector2(500, 500)
@@ -11,19 +11,20 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -279.5
-offset_top = -263.5
+offset_top = -279.5
 offset_right = 279.5
-offset_bottom = 295.5
+offset_bottom = 279.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 mouse_filter = 2
-theme_override_constants/v_separation = 1
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
 columns = 2
 script = ExtResource("1_87n1l")
-grid_object = ExtResource("2_wrsxx")
-grid_size = 2
+grid_object = ExtResource("2_cbxyw")
+grid_size = 10
 
 [node name="FlipTimer" type="Timer" parent="."]
 one_shot = true

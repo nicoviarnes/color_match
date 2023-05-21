@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da77op0yfi35g"
-path="res://.godot/imported/solid_green_dollop.png-22b16250c650b7cdc1a6e6857ff6ad4f.ctex"
+uid="uid://bajcfuh37mhqj"
+path="res://.godot/imported/solid_blue_dollop_03.png-350207658039b761e333ff68587cd7a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cupcakes/solid_green_dollop.png"
-dest_files=["res://.godot/imported/solid_green_dollop.png-22b16250c650b7cdc1a6e6857ff6ad4f.ctex"]
+source_file="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_03.png"
+dest_files=["res://.godot/imported/solid_blue_dollop_03.png-350207658039b761e333ff68587cd7a4.ctex"]
 
 [params]
 

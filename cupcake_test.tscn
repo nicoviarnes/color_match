@@ -1,9 +1,103 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci4xjq4jx6rx8"]
+[gd_scene load_steps=12 format=3]
 
-[ext_resource type="Texture2D" uid="uid://da77op0yfi35g" path="res://assets/cupcakes/solid_green_dollop.png" id="1_hha84"]
+[ext_resource type="Texture2D" uid="uid://hvbx2ww5s125" path="res://assets/cupcakes/solid_green_dollop/solid_green_dollop.png" id="1_hha84"]
+[ext_resource type="Script" path="res://cupcake_test.gd" id="1_uk1em"]
+[ext_resource type="Shader" path="res://assets/shaders/glow.gdshader" id="2_ux16p"]
+[ext_resource type="Shader" path="res://assets/shaders/blackout.gdshader" id="4_h6orl"]
 
-[node name="Sprite2D" type="TextureRect"]
-custom_minimum_size = Vector2(56, 66.75)
+[sub_resource type="Animation" id="Animation_wa6hp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_y5a83"]
+resource_name = "clicked"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_8galm"]
+resource_name = "clicked"
+length = 2.2
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 1, 0, 0, 0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_d31l6"]
+resource_name = "matched"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ycdhp"]
+_data = {
+"RESET": SubResource("Animation_wa6hp"),
+"clicked": SubResource("Animation_y5a83"),
+"idle": SubResource("Animation_8galm"),
+"matched": SubResource("Animation_d31l6")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6e6u"]
+shader = ExtResource("4_h6orl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihwfa"]
+shader = ExtResource("2_ux16p")
+shader_parameter/glow_amount = 0.25
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+
+[node name="Cupcake" type="ColorRect"]
+custom_minimum_size = Vector2(22.4, 26.7)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -15,8 +109,38 @@ offset_right = 2.5
 offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_uk1em")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(28, 33.375)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_hha84")
 hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ycdhp")
+}
+
+[node name="SmileTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Cardback" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_k6e6u")
+texture = ExtResource("1_hha84")
+hframes = 5
+
+[node name="Glow" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_ihwfa")
+position = Vector2(28, 33.375)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_hha84")
+hframes = 5
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="SmileTimer" to="." method="_on_smile_timer_timeout"]

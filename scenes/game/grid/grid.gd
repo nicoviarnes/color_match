@@ -8,20 +8,15 @@ extends GridContainer
 
 signal update_score(score, maxScore)
 
-var possible_colors: Array = [
-	Color.BLUE,
-	Color.PURPLE,
-	Color.GREEN,
-	Color.YELLOW,
-	Color.RED,
-	Color.DEEP_PINK,
-	Color.ORANGE,
-	Color.WEB_PURPLE,
-	Color.MAROON,
-	Color.DARK_BLUE
+var possible_textures: Array = [
+	"solid_blue_dollop",
+	"solid_green_dollop"
 ]
+var base_grid_item_size = Vector2(448, 534)
+var grid_item_size = Vector2(448, 534)
+var sprite_offset = grid_item_size / 2
 
-var grid_colors : Array = []
+var grid_textures : Array = []
 var grid_size_half
 
 var choice_one = null
@@ -36,17 +31,20 @@ func _ready():
 func make_grid():
 	set_columns(grid_size)
 	
+	grid_item_size = base_grid_item_size / grid_size
+	sprite_offset = grid_item_size / 2
+	
 	var grid_size_square = grid_size * grid_size
 	grid_size_half = grid_size_square / 2
 	
-	grid_colors.resize(grid_size_square)
+	grid_textures.resize(grid_size_square)
 	
 	for i in range(grid_size_half):
-		var color = possible_colors.pick_random()
-		grid_colors[i] = color
-		grid_colors[i + grid_size_half] = color
+		var tex = possible_textures.pick_random()
+		grid_textures[i] = tex
+		grid_textures[i + grid_size_half] = tex
 	
-	grid_colors.shuffle()
+	grid_textures.shuffle()
 
 	emit_signal("update_score", 0, grid_size_half)
 	render_board()
@@ -55,15 +53,19 @@ func render_board():
 	for child in get_children():
 		if child.is_in_group("grid_item"):
 			child.queue_free()
-	for color in grid_colors:
+	for tex in grid_textures:
 		var new_grid_object = grid_object.instantiate()
-#		new_grid_object.color = color
-#		new_grid_object.selected.connect(select_tile)
+		new_grid_object.custom_minimum_size = grid_item_size
+		new_grid_object.cupcake_type = tex
+	
+		new_grid_object.selected.connect(select_tile)
+		
 		add_child(new_grid_object)
 
 func check_for_match():
-	if choice_one.color != choice_two.color:
+	if choice_one.cupcake_type != choice_two.cupcake_type:
 		print("No match")
+		print(choice_one.cupcake_type,choice_two.cupcake_type)
 		choice_one.set_mouse_input(false)
 		choice_two.set_mouse_input(false)
 		flip_timer.start()

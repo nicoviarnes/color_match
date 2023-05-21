@@ -4,10 +4,14 @@ extends Control
 @onready var level_timer_component = $LevelTimer
 @onready var grid = $Grid
 
+
+func _ready():
+	print(grid.size)
+
 func game_over():
 	grid.grid_size = 2
 	get_tree().change_scene_to_file("res://scenes/ui/game_over/game_over.tscn")
-
+	
 
 func _on_all_matched():
 	grid.grid_size += 2
