@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2md12qc3eao2"]
+[gd_scene load_steps=8 format=3 uid="uid://b2md12qc3eao2"]
 
 [ext_resource type="Texture2D" uid="uid://q78778tc0dk2" path="res://assets/cupcakes/cardback.png" id="2_fxea4"]
+[ext_resource type="AudioStream" uid="uid://wos8t7wgk6yo" path="res://assets/sound/Wav/Confirm_tones/style2/confirm_style_2_005.wav" id="2_g1vq7"]
+[ext_resource type="PackedScene" uid="uid://6e4oi4u2xtdj" path="res://scenes/game/grid/memory/match_particles.tscn" id="3_336wn"]
 [ext_resource type="Shader" path="res://assets/shaders/glow.gdshader" id="3_fy800"]
 [ext_resource type="Script" path="res://cupcake_test2.gd" id="6_e8lxw"]
 
@@ -24,6 +26,8 @@ texture = SubResource("AnimatedTexture_whem8")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("6_e8lxw")
+click_sound = ExtResource("2_g1vq7")
+particles = ExtResource("3_336wn")
 
 [node name="Cardback" type="TextureRect" parent="."]
 layout_mode = 1

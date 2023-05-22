@@ -1,3 +1,7 @@
+	TASKS
+		screen shake
+		sound effects
+	
 	Game Mechanics:
 		DONE - The game will present a grid of colored objects (e.g., squares, circles, or tiles) on the screen.
 		DONE - The player's task is to click or tap on pairs of adjacent objects that have the same color to make them disappear.

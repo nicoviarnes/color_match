@@ -2,11 +2,14 @@ extends GridContainer
 
 @export var grid_object : PackedScene
 @export var grid_size : int
+@export var match_sound : AudioStreamWAV
+@export var error_sound : AudioStreamWAV
 
 @onready var flip_timer = $FlipTimer
 @onready var match_timer = $MatchTimer
 
 signal update_score(score, maxScore)
+signal shake_screen(intensity)
 
 var possible_textures: Array = [
 	"solid_blue_dollop",
@@ -65,6 +68,8 @@ func render_board():
 func check_for_match():
 	if choice_one.cupcake_type != choice_two.cupcake_type:
 		print("No match")
+		AudioManager.play(error_sound, -10.0)
+		emit_signal("shake_screen", 20)
 		print(choice_one.cupcake_type,choice_two.cupcake_type)
 		choice_one.set_mouse_input(false)
 		choice_two.set_mouse_input(false)
@@ -93,6 +98,7 @@ func settle_flip():
 	reset_choices()
 
 func match_found():
+	AudioManager.play(match_sound, 0.0)
 	choice_one.resolve_match()
 	choice_two.resolve_match()
 	reset_choices()
@@ -108,3 +114,11 @@ func reset_choices():
 	choice_one = null
 	choice_two = null
 	flipping = false
+
+
+func _on_level_timer_out_of_time():
+	for child in get_children():
+		child.get_node("SmileTimer").stop()
+		child.get_node("BlinkTimer").stop()
+		child.texture.current_frame = 4
+		child.flip_card()

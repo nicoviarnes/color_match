@@ -1,4 +1,7 @@
 Timer
+CPUParticles2D
+TextureProgressBar
+Camera2D
 TextureRect
 Sprite2D
 AnimationPlayer

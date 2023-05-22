@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdmkqkis3pdab"]
+[gd_scene load_steps=5 format=3 uid="uid://bdmkqkis3pdab"]
 
 [ext_resource type="Script" path="res://scenes/game/grid/grid.gd" id="1_87n1l"]
 [ext_resource type="PackedScene" uid="uid://b2md12qc3eao2" path="res://cupcake_test2.tscn" id="2_cbxyw"]
+[ext_resource type="AudioStream" uid="uid://bynkldexhwhbj" path="res://assets/sound/Wav/Confirm_tones/style6/confirm_style_6_003.wav" id="3_603ph"]
+[ext_resource type="AudioStream" uid="uid://ch0m4og3cq8xu" path="res://assets/sound/Wav/Error_tones/style2/error_style_2_001.wav" id="4_2o34g"]
 
 [node name="Grid" type="GridContainer"]
 custom_minimum_size = Vector2(500, 500)
@@ -25,11 +27,14 @@ columns = 2
 script = ExtResource("1_87n1l")
 grid_object = ExtResource("2_cbxyw")
 grid_size = 10
+match_sound = ExtResource("3_603ph")
+error_sound = ExtResource("4_2o34g")
 
 [node name="FlipTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="MatchTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [connection signal="timeout" from="FlipTimer" to="." method="settle_flip"]

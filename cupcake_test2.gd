@@ -7,6 +7,8 @@ var cupcake_type : String
 @onready var blink_timer = $BlinkTimer
 @onready var card_back = $Cardback
 
+@export var click_sound : AudioStreamWAV
+@export var particles : PackedScene
 
 var flipped : bool = false
 var matched : bool = false
@@ -31,7 +33,9 @@ func resolve_match():
 	glow.visible = false
 	card_back.visible = false
 	flipped = false  # Ensure flipped is set to false
-
+	var particle = particles.instantiate()
+	particle.position = size / 2
+	add_child(particle)
 
 
 func flip_card():
@@ -52,6 +56,7 @@ func _on_mouse_exited():
 func _on_gui_input(event):
 	if not matched:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			AudioManager.play(click_sound, -25.0)
 			glow.visible = false
 			texture.current_frame = 2
 			smile_timer.start()

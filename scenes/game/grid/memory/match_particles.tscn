@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://6e4oi4u2xtdj"]
+
+[ext_resource type="Texture2D" uid="uid://bxrj773px7ttf" path="res://assets/cupcakes/heart.png" id="1_rctwn"]
+[ext_resource type="Script" path="res://scenes/game/grid/memory/match_particles.gd" id="2_ycjtq"]
+
+[node name="match_particles" type="CPUParticles2D"]
+amount = 5
+lifetime = 0.75
+texture = ExtResource("1_rctwn")
+emission_shape = 1
+emission_sphere_radius = 32.0
+direction = Vector2(1, 1)
+spread = 90.0
+gravity = Vector2(0, -120)
+orbit_velocity_min = 0.05
+orbit_velocity_max = 0.15
+linear_accel_min = 0.1
+linear_accel_max = 0.25
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 0.15
+scale_amount_max = 0.65
+script = ExtResource("2_ycjtq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

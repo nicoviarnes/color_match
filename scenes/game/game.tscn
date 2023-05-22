@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xx38c0f5gjnj"]
+[gd_scene load_steps=10 format=3 uid="uid://xx38c0f5gjnj"]
 
 [ext_resource type="PackedScene" uid="uid://bdmkqkis3pdab" path="res://scenes/game/grid/grid.tscn" id="1_2qm51"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_hrhd6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://caak741heyjo5" path="res://assets/KawaiiCupcakeAssetPack/UI/HUD-bottom2-blue.png" id="3_ys3rr"]
 [ext_resource type="Texture2D" uid="uid://bikv4nwe6ch4r" path="res://assets/KawaiiCupcakeAssetPack/UI/window2-yellow.png" id="4_8ammd"]
 [ext_resource type="Texture2D" uid="uid://53mqa1fvatdu" path="res://assets/KawaiiCupcakeAssetPack/UI/HUD-top1-blue.png" id="4_82yqx"]
+[ext_resource type="Script" path="res://scenes/game/Camera2D.gd" id="9_2hxfr"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -65,6 +66,17 @@ theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 2
 grid_size = 2
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(581, 330)
+zoom = Vector2(0.8, 0.8)
+script = ExtResource("9_2hxfr")
+
+[node name="ShakeTimer" type="Timer" parent="Camera2D"]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="all_matched" from="Score" to="." method="_on_all_matched"]
-[connection signal="out_of_time" from="LevelTimer" to="." method="game_over"]
+[connection signal="out_of_time" from="LevelTimer" to="Grid" method="_on_level_timer_out_of_time"]
+[connection signal="shake_screen" from="Grid" to="Camera2D" method="screen_shake"]
 [connection signal="update_score" from="Grid" to="Score" method="_on_update_score"]
+[connection signal="timeout" from="Camera2D/ShakeTimer" to="Camera2D" method="_on_shake_timer_timeout"]
