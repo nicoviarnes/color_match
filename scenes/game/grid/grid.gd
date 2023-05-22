@@ -70,16 +70,13 @@ func render_board():
 
 func check_for_match():
 	if choice_one.cupcake_type != choice_two.cupcake_type:
-		print("No match")
 		AudioManager.play(error_sound, -10.0)
 		emit_signal("shake_screen", 20)
-		print(choice_one.cupcake_type,choice_two.cupcake_type)
 		choice_one.set_mouse_input(false)
 		choice_two.set_mouse_input(false)
 		flip_timer.start()
 		return
 		
-	print("matched")
 	match_timer.start()
 
 func select_tile(tile):

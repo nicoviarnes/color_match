@@ -9,6 +9,7 @@ var cupcake_type : String
 
 @export var click_sound : AudioStreamWAV
 @export var particles : PackedScene
+@export var mouseover_sound : AudioStreamWAV
 
 var flipped : bool = false
 var matched : bool = false
@@ -50,7 +51,6 @@ func flip_card(clear):
 func _on_mouse_entered():
 	if not flipped:
 		glow.visible = true
-
 
 
 func _on_mouse_exited():

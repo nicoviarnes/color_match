@@ -33,6 +33,7 @@ error_sound = ExtResource("4_2o34g")
 gameover_sound = ExtResource("5_rbox7")
 
 [node name="FlipTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="MatchTimer" type="Timer" parent="."]

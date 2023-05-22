@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgxca8kqnnyq0"]
+[gd_scene load_steps=4 format=3 uid="uid://cgxca8kqnnyq0"]
 
 [ext_resource type="Script" path="res://scenes/game/level_timer/level_timer.gd" id="1_l4dbt"]
-[ext_resource type="Texture2D" uid="uid://c66iqq2ttmdyb" path="res://assets/KawaiiCupcakeAssetPack/UI/LB-middleLoader-pink.png" id="2_wgbsx"]
+[ext_resource type="Texture2D" uid="uid://destxm4tw1vkn" path="res://assets/progress_bar/progress_outline.png" id="2_32i52"]
+[ext_resource type="Texture2D" uid="uid://c1k3h1m2dsshd" path="res://assets/progress_bar/progress_green.png" id="3_qmefa"]
 
 [node name="LevelTimer" type="Control"]
 layout_mode = 3
@@ -21,19 +22,23 @@ autostart = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = -60.0
+offset_left = 200.0
+offset_top = -64.0
+offset_right = -200.0
+offset_bottom = 12.0
 grow_horizontal = 2
-max_value = 10.0
+max_value = 20.0
 value = 10.0
 nine_patch_stretch = true
-texture_progress = ExtResource("2_wgbsx")
+texture_over = ExtResource("2_32i52")
+texture_progress = ExtResource("3_qmefa")
 
 [node name="Remaining" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = -60.0
-offset_bottom = -2.0
+offset_top = -63.0
+offset_bottom = 12.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
