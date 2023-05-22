@@ -29,7 +29,7 @@ func resolve_match():
 	blink_timer.stop()
 	matched = true
 	texture.current_frame = 3
-	set_mouse_filter(2)
+	set_mouse_filter(MOUSE_FILTER_IGNORE)
 	glow.visible = false
 	card_back.visible = false
 	flipped = false  # Ensure flipped is set to false
@@ -38,9 +38,13 @@ func resolve_match():
 	add_child(particle)
 
 
-func flip_card():
+func flip_card(clear):
 	card_back.visible = flipped  # if flipped == true then card_back.visible = true, else card_back.visible = false
 	flipped = !flipped  # flip the state
+	if clear:
+		set_mouse_filter(MOUSE_FILTER_IGNORE)
+		card_back.visible = false
+		glow.visible = false
 
 
 func _on_mouse_entered():

@@ -4,12 +4,15 @@ extends GridContainer
 @export var grid_size : int
 @export var match_sound : AudioStreamWAV
 @export var error_sound : AudioStreamWAV
+@export var gameover_sound : AudioStreamWAV
 
 @onready var flip_timer = $FlipTimer
 @onready var match_timer = $MatchTimer
+@onready var end_timer = $EndTimer
 
 signal update_score(score, maxScore)
 signal shake_screen(intensity)
+signal gameover
 
 var possible_textures: Array = [
 	"solid_blue_dollop",
@@ -85,12 +88,12 @@ func select_tile(tile):
 
 	if choice_one == null:
 		choice_one = tile
-		choice_one.flip_card()
+		choice_one.flip_card(false)
 		return
 
 	if choice_two == null and tile != choice_one:
 		choice_two = tile
-		choice_two.flip_card()
+		choice_two.flip_card(false)
 		flipping = true
 		check_for_match()
 
@@ -106,10 +109,10 @@ func match_found():
 
 func reset_choices():
 	if choice_one:
-		choice_one.flip_card()
+		choice_one.flip_card(false)
 		choice_one.set_mouse_input(true)
 	if choice_two:
-		choice_two.flip_card()
+		choice_two.flip_card(false)
 		choice_two.set_mouse_input(true)
 	choice_one = null
 	choice_two = null
@@ -117,8 +120,16 @@ func reset_choices():
 
 
 func _on_level_timer_out_of_time():
+	emit_signal("shake_screen", 200)
 	for child in get_children():
-		child.get_node("SmileTimer").stop()
-		child.get_node("BlinkTimer").stop()
-		child.texture.current_frame = 4
-		child.flip_card()
+		if child.is_in_group("grid_item"):
+			child.get_node("SmileTimer").stop()
+			child.get_node("BlinkTimer").stop()
+			child.texture.current_frame = 4
+			child.flip_card(true)
+	end_timer.start()
+	AudioManager.play(gameover_sound, 1.0)
+
+
+func _on_end_timer_timeout():
+	emit_signal("gameover")

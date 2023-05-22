@@ -13,7 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_l4dbt")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 
@@ -23,8 +23,8 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_top = -60.0
 grow_horizontal = 2
-max_value = 60.0
-value = 60.0
+max_value = 10.0
+value = 10.0
 nine_patch_stretch = true
 texture_progress = ExtResource("2_wgbsx")
 

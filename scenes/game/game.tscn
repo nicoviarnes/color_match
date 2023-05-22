@@ -77,6 +77,7 @@ one_shot = true
 
 [connection signal="all_matched" from="Score" to="." method="_on_all_matched"]
 [connection signal="out_of_time" from="LevelTimer" to="Grid" method="_on_level_timer_out_of_time"]
+[connection signal="gameover" from="Grid" to="." method="game_over"]
 [connection signal="shake_screen" from="Grid" to="Camera2D" method="screen_shake"]
 [connection signal="update_score" from="Grid" to="Score" method="_on_update_score"]
 [connection signal="timeout" from="Camera2D/ShakeTimer" to="Camera2D" method="_on_shake_timer_timeout"]

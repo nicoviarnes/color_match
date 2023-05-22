@@ -16,5 +16,5 @@ func game_over():
 func _on_all_matched():
 	grid.grid_size += 2
 	score_component.reset_score()
-	level_timer_component.reset_timer()
+	level_timer_component.reset_timer(grid.grid_size)
 	grid.make_grid()
