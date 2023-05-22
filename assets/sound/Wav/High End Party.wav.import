@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf0numsgj46pq"
+path="res://.godot/imported/High End Party.wav-e18b23c90246ffc0af2ca8ec4536b588.sample"
+
+[deps]
+
+source_file="res://assets/sound/Wav/High End Party.wav"
+dest_files=["res://.godot/imported/High End Party.wav-e18b23c90246ffc0af2ca8ec4536b588.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
