@@ -9,11 +9,13 @@
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_whem8"]
 resource_local_to_scene = true
-frames = 5
+frames = 7
 frame_1/duration = 1.0
 frame_2/duration = 1.0
 frame_3/duration = 1.0
 frame_4/duration = 1.0
+frame_5/duration = 1.0
+frame_6/duration = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_71ulk"]
 shader = ExtResource("3_fy800")
@@ -58,6 +60,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="SmileTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="BlinkTimer" type="Timer" parent="."]

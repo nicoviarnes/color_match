@@ -19,7 +19,7 @@ signal selected(node)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var texture_directory = "res://assets/cupcakes/" + cupcake_type + "/"
-	for i in 5:
+	for i in 7:
 		var cupcake = texture_directory + cupcake_type + "_0" + str(i + 1) + ".png"
 		texture.set_frame_texture(i, load(cupcake))
 	texture.pause = true
@@ -62,7 +62,7 @@ func _on_gui_input(event):
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			AudioManager.play(click_sound, -25.0)
 			glow.visible = false
-			texture.current_frame = 2
+			texture.current_frame = 5
 			smile_timer.start()
 			emit_signal("selected", self)
 

@@ -16,7 +16,8 @@ signal gameover
 
 var possible_textures: Array = [
 	"solid_blue_dollop",
-	"solid_green_dollop"
+	"solid_green_dollop",
+	"solid_pink_dollop"
 ]
 var base_grid_item_size = Vector2(448, 534)
 var grid_item_size = Vector2(448, 534)
@@ -72,6 +73,12 @@ func check_for_match():
 	if choice_one.cupcake_type != choice_two.cupcake_type:
 		AudioManager.play(error_sound, -10.0)
 		emit_signal("shake_screen", 20)
+		choice_one.get_node("SmileTimer").stop()
+		choice_one.get_node("BlinkTimer").stop()
+		choice_two.get_node("SmileTimer").stop()
+		choice_two.get_node("BlinkTimer").stop()
+		choice_one.texture.current_frame = 6
+		choice_two.texture.current_frame = 6
 		choice_one.set_mouse_input(false)
 		choice_two.set_mouse_input(false)
 		flip_timer.start()
