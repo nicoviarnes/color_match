@@ -26,3 +26,7 @@ gdscript/warnings/integer_division=0
 [display]
 
 window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom_font="res://assets/Fredoka/static/Fredoka-Bold.ttf"
