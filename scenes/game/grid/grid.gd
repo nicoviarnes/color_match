@@ -9,6 +9,7 @@ extends GridContainer
 @onready var flip_timer = $FlipTimer
 @onready var match_timer = $MatchTimer
 @onready var end_timer = $EndTimer
+@onready var fancy_timer = $fancy
 
 signal update_score(score, maxScore)
 signal shake_screen(intensity)
@@ -66,9 +67,10 @@ func render_board():
 		new_grid_object.cupcake_type = tex
 	
 		new_grid_object.selected.connect(select_tile)
-		
+		new_grid_object.visible = false
 		add_child(new_grid_object)
-
+	fancy_flip()
+	
 func check_for_match():
 	if choice_one.cupcake_type != choice_two.cupcake_type:
 		AudioManager.play(error_sound, -10.0)
@@ -104,6 +106,16 @@ func select_tile(tile):
 func settle_flip():
 	reset_choices()
 
+
+func fancy_flip():
+	for child in get_children():
+		if child.is_in_group("grid_item"):
+			if child.visible == false:
+				child.visible = true
+				fancy_timer.start()
+				return
+
+
 func match_found():
 	AudioManager.play(match_sound, 0.0)
 	choice_one.resolve_match()
@@ -137,3 +149,7 @@ func _on_level_timer_out_of_time():
 
 func _on_end_timer_timeout():
 	emit_signal("gameover")
+
+
+func _on_fancy_timeout():
+	fancy_flip()

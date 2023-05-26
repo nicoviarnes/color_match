@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://xpugylhtimai"]
+[gd_scene load_steps=5 format=3 uid="uid://xpugylhtimai"]
 
 [ext_resource type="Script" path="res://scenes/ui/game_over/game_over.gd" id="1_f4ejs"]
-[ext_resource type="Texture2D" uid="uid://drlvqpgcdjtho" path="res://assets/KawaiiCupcakeAssetPack/UI/BG-normal-orange.png" id="2_us0i8"]
 [ext_resource type="Texture2D" uid="uid://cejp3cf4su8fu" path="res://assets/KawaiiCupcakeAssetPack/UI/window2-blue.png" id="3_xgw66"]
 [ext_resource type="Texture2D" uid="uid://bfd5lnqqbk1d7" path="res://assets/KawaiiCupcakeAssetPack/UI/buttons-blue/g15535.png" id="4_7k7mb"]
 [ext_resource type="Texture2D" uid="uid://dihj4fnwadl6u" path="res://assets/KawaiiCupcakeAssetPack/UI/buttons-blue/pressed/g18213.png" id="5_k8vxp"]
@@ -15,10 +14,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f4ejs")
 
-[node name="Bg-normal-orange" type="Sprite2D" parent="."]
-position = Vector2(580, 479.5)
-scale = Vector2(1.41648, 1.24833)
-texture = ExtResource("2_us0i8")
+[node name="TextureRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -486.0
+offset_right = 385.0
+offset_bottom = 376.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.807843, 1, 1)
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1

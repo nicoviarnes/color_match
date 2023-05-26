@@ -1,11 +1,9 @@
-res://assets/shaders/sky.gdshader
-res://readme.md
+res://scenes/ui/game_over/game_over.tscn
+res://scenes/ui/ui.tscn
 res://scenes/game/game.tscn
 res://scenes/game/grid/grid.tscn
 res://cupcake_test2.tscn
-res://scenes/ui/ui.tscn
 res://scenes/game/grid/memory/match_particles.tscn
 res://main.tscn
 res://scenes/game/level_timer/level_timer.tscn
-res://scenes/ui/game_over/game_over.tscn
-res://bg_test.tscn
+res://scenes/game/grid/grid.gd
