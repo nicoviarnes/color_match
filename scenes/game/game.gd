@@ -7,6 +7,12 @@ extends Control
 @onready var right_slide = $RightSlide
 @onready var build_timer = $Timer
 
+@onready var bg = $TextureRect2
+@onready var cloud_timer = $CloudTimer
+
+var Cloud = preload("res://scenes/game/cloud/cloud.tscn")
+
+
 func game_over():
 	grid.grid_size = 2
 	get_tree().change_scene_to_file("res://scenes/ui/game_over/game_over.tscn")
@@ -31,3 +37,14 @@ func rebuild_grid():
 
 func _on_timer_timeout():
 	rebuild_grid()
+
+
+func _on_cloud_timer_timeout():
+	var cloud = Cloud.instantiate()
+	cloud.position.y = randi_range(770, 1400)
+	cloud.position.x = 2134
+	var rand_scale = randf_range(0.4, 1.0)
+	cloud.scale.x = rand_scale
+	cloud.scale.y = rand_scale
+	bg.add_child(cloud)
+	cloud_timer.start()

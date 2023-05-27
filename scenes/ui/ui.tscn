@@ -1,10 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqptreylng451"]
+[gd_scene load_steps=25 format=3 uid="uid://bqptreylng451"]
 
 [ext_resource type="Script" path="res://scenes/ui/ui.gd" id="1_bpshf"]
 [ext_resource type="Texture2D" uid="uid://bfd5lnqqbk1d7" path="res://assets/KawaiiCupcakeAssetPack/UI/buttons-blue/g15535.png" id="2_8pvii"]
+[ext_resource type="Texture2D" uid="uid://ba77ttaupd1ln" path="res://assets/KawaiiCupcakeAssetPack/map/section-sky-1.png" id="2_bndf4"]
 [ext_resource type="Texture2D" uid="uid://da1jfpk3heepp" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_03.png" id="2_ts2na"]
 [ext_resource type="Texture2D" uid="uid://c8evdu14xrkmb" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_06.png" id="3_mymed"]
 [ext_resource type="Texture2D" uid="uid://dihj4fnwadl6u" path="res://assets/KawaiiCupcakeAssetPack/UI/buttons-blue/pressed/g18213.png" id="3_obr8e"]
+[ext_resource type="PackedScene" uid="uid://by65ps6pypqvf" path="res://scenes/game/cloud/cloud.tscn" id="3_uv4ai"]
 [ext_resource type="Texture2D" uid="uid://cu42seoopx7dh" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_04.png" id="4_0ffyr"]
 [ext_resource type="Texture2D" uid="uid://cejp3cf4su8fu" path="res://assets/KawaiiCupcakeAssetPack/UI/window2-blue.png" id="4_2evk3"]
 [ext_resource type="Texture2D" uid="uid://c60ps5akp8jqs" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_03.png" id="5_x02kc"]
@@ -110,18 +112,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bpshf")
 
-[node name="TextureRect2" type="ColorRect" parent="."]
+[node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -486.0
-offset_right = 385.0
-offset_bottom = 376.0
+offset_left = -319.0
+offset_top = -731.0
+offset_right = 466.0
+offset_bottom = 669.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.807843, 1, 1)
+texture = ExtResource("2_bndf4")
+
+[node name="Cloud" parent="TextureRect3" instance=ExtResource("3_uv4ai")]
+position = Vector2(2032, 1404)
+
+[node name="CloudTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 position = Vector2(942, 301)
@@ -257,5 +267,6 @@ text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="timeout" from="CloudTimer" to="." method="_on_cloud_timer_timeout"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

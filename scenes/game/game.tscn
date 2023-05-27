@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://xx38c0f5gjnj"]
+[gd_scene load_steps=10 format=3 uid="uid://xx38c0f5gjnj"]
 
 [ext_resource type="PackedScene" uid="uid://bdmkqkis3pdab" path="res://scenes/game/grid/grid.tscn" id="1_2qm51"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_hrhd6"]
 [ext_resource type="PackedScene" uid="uid://c22hqjd76ir6v" path="res://scenes/game/score/score.tscn" id="1_ud7bf"]
+[ext_resource type="Texture2D" uid="uid://ba77ttaupd1ln" path="res://assets/KawaiiCupcakeAssetPack/map/section-sky-1.png" id="2_5t8bn"]
 [ext_resource type="PackedScene" uid="uid://cgxca8kqnnyq0" path="res://scenes/game/level_timer/level_timer.tscn" id="2_78uw5"]
+[ext_resource type="PackedScene" uid="uid://by65ps6pypqvf" path="res://scenes/game/cloud/cloud.tscn" id="3_3pg8u"]
 [ext_resource type="Texture2D" uid="uid://bikv4nwe6ch4r" path="res://assets/KawaiiCupcakeAssetPack/UI/window2-yellow.png" id="4_8ammd"]
 [ext_resource type="Texture2D" uid="uid://dnv7ny8pqa6we" path="res://assets/slidein.png" id="5_e4o5l"]
 [ext_resource type="Script" path="res://scenes/game/Camera2D.gd" id="9_2hxfr"]
@@ -17,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hrhd6")
 
-[node name="TextureRect2" type="ColorRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +30,10 @@ offset_right = 466.0
 offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.807843, 1, 1)
+texture = ExtResource("2_5t8bn")
+
+[node name="Cloud" parent="TextureRect2" instance=ExtResource("3_3pg8u")]
+position = Vector2(2032, 1404)
 
 [node name="Score" parent="." instance=ExtResource("1_ud7bf")]
 layout_mode = 1
@@ -104,6 +109,11 @@ one_shot = true
 wait_time = 0.3
 one_shot = true
 
+[node name="CloudTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
 [connection signal="all_matched" from="Score" to="." method="_on_all_matched"]
 [connection signal="out_of_time" from="LevelTimer" to="Grid" method="_on_level_timer_out_of_time"]
 [connection signal="gameover" from="Grid" to="." method="game_over"]
@@ -111,3 +121,4 @@ one_shot = true
 [connection signal="update_score" from="Grid" to="Score" method="_on_update_score"]
 [connection signal="timeout" from="Camera2D/ShakeTimer" to="Camera2D" method="_on_shake_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CloudTimer" to="." method="_on_cloud_timer_timeout"]

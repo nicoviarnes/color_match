@@ -26,7 +26,7 @@ func play(sound_path, volume):
 	queue.append([sound_path, volume])
 	
 
-func _process(delta):
+func _process(_delta):
 	# Play a queued sound if any player is available
 	if not queue.is_empty() and not available.is_empty():
 		var track = queue.pop_front()
@@ -37,5 +37,5 @@ func _process(delta):
 
 
 func bus_volume(volume):
-	var bus = AudioServer.get_bus_index("SFX")
-	AudioServer.set_bus_volume_db(bus, volume)
+	var BUS = AudioServer.get_bus_index("SFX")
+	AudioServer.set_bus_volume_db(BUS, volume)
