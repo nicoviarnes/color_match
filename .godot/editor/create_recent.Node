@@ -1,8 +1,9 @@
+Label
+HSlider
 AnimatedSprite2D
 Timer
 TextureRect
 ColorRect
-Label
 TextureButton
 CPUParticles2D
 TextureProgressBar

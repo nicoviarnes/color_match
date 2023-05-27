@@ -1,10 +1,11 @@
+res://assets/Fredoka/static
+res://scenes/ui/settings
+res://scripts
 res://assets/cupcakes/solid_pink_dollop
 res://
 res://assets/shaders
-res://assets/Fredoka/static
 res://assets
 res://scenes/game/grid/memory
-res://scripts
 res://assets/cupcakes/solid_green_dollop
 res://scenes/ui/game_over
 res://scenes/game/level_timer

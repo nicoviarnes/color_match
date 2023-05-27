@@ -1,7 +1,7 @@
 extends Node
 
-var num_players = 48  # How many AudioStreamPlayers to use
-var bus = "SFX"  # Which bus to play audio on
+var num_players = 1  # How many AudioStreamPlayers to use
+var bus = "BGM"  # Which bus to play audio on
 
 var available = []  # The list of available players
 var queue = []  # The queue of sounds to play
@@ -37,5 +37,7 @@ func _process(delta):
 
 
 func bus_volume(volume):
-	var bus = AudioServer.get_bus_index("SFX")
+	print(volume)
+	var bus = AudioServer.get_bus_index("BGM")
+	print(bus)
 	AudioServer.set_bus_volume_db(bus, volume)

@@ -1,12 +1,10 @@
 res://scenes/game/grid/grid.tscn
-res://scenes/game/grid/grid.gd
 res://scenes/game/game.tscn
 res://cupcake_test2.tscn
-res://scenes/ui/ui.tscn
-res://scenes/game/grid/memory/match_particles.tscn
 res://main.tscn
 res://scenes/game/level_timer/level_timer.tscn
 res://scenes/ui/game_over/game_over.tscn
-res://scenes/game/game.gd
-res://scenes/ui/ui.gd
-res://scenes/ui/game_over/game_over.gd
+res://scenes/ui/ui.tscn
+res://scenes/ui/settings/settings.tscn
+res://scenes/ui/settings/settings.gd
+res://main.gd

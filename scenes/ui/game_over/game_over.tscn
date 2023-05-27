@@ -127,37 +127,37 @@ color = Color(1, 0.807843, 1, 1)
 position = Vector2(942, 301)
 rotation = -0.0606891
 sprite_frames = SubResource("SpriteFrames_8lrxc")
-frame_progress = 0.306423
+frame_progress = 0.114737
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(849, 449)
 rotation = -0.129992
 sprite_frames = SubResource("SpriteFrames_coxql")
-frame_progress = 0.89808
+frame_progress = 0.706393
 
 [node name="SolidPinkDollop07" type="AnimatedSprite2D" parent="."]
 position = Vector2(1029, 479)
 rotation = 0.129268
 sprite_frames = SubResource("SpriteFrames_nks7m")
-frame_progress = 0.390612
+frame_progress = 0.198926
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(193, 301)
 rotation = 0.0425317
 sprite_frames = SubResource("SpriteFrames_ctx5s")
-frame_progress = 0.122318
+frame_progress = 0.930631
 
 [node name="SolidBlueDollop04" type="AnimatedSprite2D" parent="."]
 position = Vector2(126, 487)
 rotation = -0.23911
 sprite_frames = SubResource("SpriteFrames_wb6fq")
-frame_progress = 0.221064
+frame_progress = 0.0293772
 
 [node name="SolidGreenDollop06" type="AnimatedSprite2D" parent="."]
 position = Vector2(308, 438)
 rotation = 0.120428
 sprite_frames = SubResource("SpriteFrames_qgaah")
-frame_progress = 0.753679
+frame_progress = 0.561993
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
