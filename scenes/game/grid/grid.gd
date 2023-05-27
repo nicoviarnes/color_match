@@ -9,7 +9,6 @@ extends GridContainer
 @onready var flip_timer = $FlipTimer
 @onready var match_timer = $MatchTimer
 @onready var end_timer = $EndTimer
-@onready var fancy_timer = $fancy
 
 signal update_score(score, maxScore)
 signal shake_screen(intensity)
@@ -18,8 +17,12 @@ signal gameover
 var possible_textures: Array = [
 	"solid_blue_dollop",
 	"solid_green_dollop",
-	"solid_pink_dollop"
+	"solid_pink_dollop",
+	"solid_salmon_dollop",
+	"solid_orange_dollop",
+	"solid_lime_dollop",
 ]
+
 var base_grid_item_size = Vector2(448, 534)
 var grid_item_size = Vector2(448, 534)
 var sprite_offset = grid_item_size / 2
@@ -35,6 +38,7 @@ var flipping : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	make_grid()
+
 
 func make_grid():
 	set_columns(grid_size)
@@ -57,6 +61,7 @@ func make_grid():
 	emit_signal("update_score", 0, grid_size_half)
 	render_board()
 
+
 func render_board():
 	for child in get_children():
 		if child.is_in_group("grid_item"):
@@ -67,10 +72,9 @@ func render_board():
 		new_grid_object.cupcake_type = tex
 	
 		new_grid_object.selected.connect(select_tile)
-		new_grid_object.visible = false
 		add_child(new_grid_object)
-	fancy_flip()
-	
+
+
 func check_for_match():
 	if choice_one.cupcake_type != choice_two.cupcake_type:
 		AudioManager.play(error_sound, -10.0)
@@ -88,6 +92,7 @@ func check_for_match():
 		
 	match_timer.start()
 
+
 func select_tile(tile):
 	if flipping:
 		return
@@ -103,17 +108,9 @@ func select_tile(tile):
 		flipping = true
 		check_for_match()
 
+
 func settle_flip():
 	reset_choices()
-
-
-func fancy_flip():
-	for child in get_children():
-		if child.is_in_group("grid_item"):
-			if child.visible == false:
-				child.visible = true
-				fancy_timer.start()
-				return
 
 
 func match_found():
@@ -122,6 +119,7 @@ func match_found():
 	choice_two.resolve_match()
 	reset_choices()
 	emit_signal("update_score", 1, grid_size_half)
+
 
 func reset_choices():
 	if choice_one:
@@ -149,7 +147,3 @@ func _on_level_timer_out_of_time():
 
 func _on_end_timer_timeout():
 	emit_signal("gameover")
-
-
-func _on_fancy_timeout():
-	fancy_flip()

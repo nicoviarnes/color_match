@@ -23,7 +23,7 @@ func _ready():
 		var cupcake = texture_directory + cupcake_type + "_0" + str(i + 1) + ".png"
 		texture.set_frame_texture(i, load(cupcake))
 	texture.pause = true
-
+	
 
 func resolve_match():
 	smile_timer.stop()

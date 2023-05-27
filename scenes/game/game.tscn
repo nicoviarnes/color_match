@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://xx38c0f5gjnj"]
+[gd_scene load_steps=8 format=3 uid="uid://xx38c0f5gjnj"]
 
 [ext_resource type="PackedScene" uid="uid://bdmkqkis3pdab" path="res://scenes/game/grid/grid.tscn" id="1_2qm51"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_hrhd6"]
 [ext_resource type="PackedScene" uid="uid://c22hqjd76ir6v" path="res://scenes/game/score/score.tscn" id="1_ud7bf"]
 [ext_resource type="PackedScene" uid="uid://cgxca8kqnnyq0" path="res://scenes/game/level_timer/level_timer.tscn" id="2_78uw5"]
 [ext_resource type="Texture2D" uid="uid://bikv4nwe6ch4r" path="res://assets/KawaiiCupcakeAssetPack/UI/window2-yellow.png" id="4_8ammd"]
+[ext_resource type="Texture2D" uid="uid://dnv7ny8pqa6we" path="res://assets/slidein.png" id="5_e4o5l"]
 [ext_resource type="Script" path="res://scenes/game/Camera2D.gd" id="9_2hxfr"]
 
 [node name="Game" type="Control"]
@@ -21,10 +22,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -486.0
-offset_right = 385.0
-offset_bottom = 376.0
+offset_left = -319.0
+offset_top = -462.0
+offset_right = 466.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.807843, 1, 1)
@@ -63,6 +64,33 @@ theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 2
 grid_size = 2
 
+[node name="LeftSlide" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -621.0
+offset_top = -310.0
+offset_right = -333.0
+offset_bottom = 312.0
+grow_vertical = 2
+texture = ExtResource("5_e4o5l")
+expand_mode = 1
+
+[node name="RightSlide" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1632.0
+offset_top = -310.0
+offset_right = 1920.0
+offset_bottom = 312.0
+grow_vertical = 2
+texture = ExtResource("5_e4o5l")
+expand_mode = 1
+flip_h = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(581, 330)
 zoom = Vector2(0.8, 0.8)
@@ -72,9 +100,14 @@ script = ExtResource("9_2hxfr")
 wait_time = 0.2
 one_shot = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="all_matched" from="Score" to="." method="_on_all_matched"]
 [connection signal="out_of_time" from="LevelTimer" to="Grid" method="_on_level_timer_out_of_time"]
 [connection signal="gameover" from="Grid" to="." method="game_over"]
 [connection signal="shake_screen" from="Grid" to="Camera2D" method="screen_shake"]
 [connection signal="update_score" from="Grid" to="Score" method="_on_update_score"]
 [connection signal="timeout" from="Camera2D/ShakeTimer" to="Camera2D" method="_on_shake_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

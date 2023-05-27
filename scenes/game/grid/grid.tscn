@@ -44,11 +44,6 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
-[node name="fancy" type="Timer" parent="."]
-wait_time = 0.15
-one_shot = true
-
 [connection signal="timeout" from="FlipTimer" to="." method="settle_flip"]
 [connection signal="timeout" from="MatchTimer" to="." method="match_found"]
 [connection signal="timeout" from="EndTimer" to="." method="_on_end_timer_timeout"]
-[connection signal="timeout" from="fancy" to="." method="_on_fancy_timeout"]

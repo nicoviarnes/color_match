@@ -1,6 +1,7 @@
+AnimatedSprite2D
 Timer
-ColorRect
 TextureRect
+ColorRect
 Label
 TextureButton
 CPUParticles2D

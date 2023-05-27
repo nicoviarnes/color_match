@@ -1,12 +1,105 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqptreylng451"]
+[gd_scene load_steps=23 format=3 uid="uid://bqptreylng451"]
 
 [ext_resource type="Script" path="res://scenes/ui/ui.gd" id="1_bpshf"]
 [ext_resource type="Texture2D" uid="uid://bfd5lnqqbk1d7" path="res://assets/KawaiiCupcakeAssetPack/UI/buttons-blue/g15535.png" id="2_8pvii"]
-[ext_resource type="Texture2D" uid="uid://e7ideanx8lpm" path="res://assets/cupcakes/solid_pink_dollop/solid_pink_dollop_07.png" id="3_cbliu"]
+[ext_resource type="Texture2D" uid="uid://da1jfpk3heepp" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_03.png" id="2_ts2na"]
+[ext_resource type="Texture2D" uid="uid://c8evdu14xrkmb" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_06.png" id="3_mymed"]
 [ext_resource type="Texture2D" uid="uid://dihj4fnwadl6u" path="res://assets/KawaiiCupcakeAssetPack/UI/buttons-blue/pressed/g18213.png" id="3_obr8e"]
+[ext_resource type="Texture2D" uid="uid://cu42seoopx7dh" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_04.png" id="4_0ffyr"]
 [ext_resource type="Texture2D" uid="uid://cejp3cf4su8fu" path="res://assets/KawaiiCupcakeAssetPack/UI/window2-blue.png" id="4_2evk3"]
-[ext_resource type="Texture2D" uid="uid://c0bsjf4i0e6qp" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_04.png" id="6_33tvs"]
-[ext_resource type="Texture2D" uid="uid://7eecj47i5hxi" path="res://assets/cupcakes/solid_green_dollop/solid_green_dollop_06.png" id="7_e6v4v"]
+[ext_resource type="Texture2D" uid="uid://c60ps5akp8jqs" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_03.png" id="5_x02kc"]
+[ext_resource type="Texture2D" uid="uid://b4eta786cuogv" path="res://assets/cupcakes/solid_pink_dollop/solid_pink_dollop_01.png" id="6_3andh"]
+[ext_resource type="Texture2D" uid="uid://dmb1gj25ay00" path="res://assets/cupcakes/solid_pink_dollop/solid_pink_dollop_02.png" id="7_2hfkd"]
+[ext_resource type="Texture2D" uid="uid://exqba8e6ts2f" path="res://assets/cupcakes/solid_orange_dollop/solid_orange_dollop_02.png" id="8_0ygdv"]
+[ext_resource type="Texture2D" uid="uid://caw01eh52vbul" path="res://assets/cupcakes/solid_orange_dollop/solid_orange_dollop_06.png" id="9_1trbn"]
+[ext_resource type="Texture2D" uid="uid://bajcfuh37mhqj" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_03.png" id="10_axofr"]
+[ext_resource type="Texture2D" uid="uid://ba3jlhfj848wj" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_02.png" id="11_400ob"]
+[ext_resource type="Texture2D" uid="uid://dn6qiontqfpsu" path="res://assets/cupcakes/solid_green_dollop/solid_green_dollop_02.png" id="12_slb7c"]
+[ext_resource type="Texture2D" uid="uid://c7dp2lcw1igt6" path="res://assets/cupcakes/solid_green_dollop/solid_green_dollop_01.png" id="13_25c3n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_675le"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ts2na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mymed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ej5h0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0ffyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x02kc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1opxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3andh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2hfkd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p151c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0ygdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1trbn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xil17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_axofr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_400ob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ki1qq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_slb7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_25c3n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -30,9 +123,35 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.807843, 1, 1)
 
-[node name="SolidPinkDollop07" type="Sprite2D" parent="."]
-position = Vector2(1027, 481)
-texture = ExtResource("3_cbliu")
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(942, 301)
+rotation = -0.0606891
+sprite_frames = SubResource("SpriteFrames_675le")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(849, 449)
+rotation = -0.129992
+sprite_frames = SubResource("SpriteFrames_ej5h0")
+
+[node name="SolidPinkDollop07" type="AnimatedSprite2D" parent="."]
+position = Vector2(1029, 479)
+rotation = 0.129268
+sprite_frames = SubResource("SpriteFrames_1opxh")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(193, 301)
+rotation = 0.0425317
+sprite_frames = SubResource("SpriteFrames_p151c")
+
+[node name="SolidBlueDollop04" type="AnimatedSprite2D" parent="."]
+position = Vector2(126, 487)
+rotation = -0.23911
+sprite_frames = SubResource("SpriteFrames_xil17")
+
+[node name="SolidGreenDollop06" type="AnimatedSprite2D" parent="."]
+position = Vector2(308, 438)
+rotation = 0.120428
+sprite_frames = SubResource("SpriteFrames_ki1qq")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -42,9 +161,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -579.0
-offset_top = -209.5
+offset_top = -334.5
 offset_right = 579.0
-offset_bottom = -2.5
+offset_bottom = -127.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.501961, 0.807843, 0.921569, 1)
@@ -56,7 +175,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Window2-blue" type="Sprite2D" parent="."]
-position = Vector2(575.5, 460)
+position = Vector2(575.5, 362)
 scale = Vector2(0.21308, 0.185654)
 texture = ExtResource("4_2evk3")
 
@@ -68,9 +187,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -138.5
-offset_top = 22.0
+offset_top = -76.0
 offset_right = 138.5
-offset_bottom = 128.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_8pvii")
@@ -107,9 +226,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -138.5
-offset_top = 145.0
+offset_top = 47.0
 offset_right = 138.5
-offset_bottom = 251.0
+offset_bottom = 153.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_8pvii")
@@ -137,16 +256,6 @@ theme_override_font_sizes/font_size = 48
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="SolidBlueDollop04" type="Sprite2D" parent="."]
-position = Vector2(126, 487)
-rotation = -0.23911
-texture = ExtResource("6_33tvs")
-
-[node name="SolidGreenDollop06" type="Sprite2D" parent="."]
-position = Vector2(308, 438)
-rotation = 0.120428
-texture = ExtResource("7_e6v4v")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
