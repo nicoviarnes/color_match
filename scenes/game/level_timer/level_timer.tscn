@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgxca8kqnnyq0"]
+[gd_scene load_steps=8 format=3 uid="uid://bqwxihbimuuus"]
 
 [ext_resource type="Script" path="res://scenes/game/level_timer/level_timer.gd" id="1_l4dbt"]
 [ext_resource type="Texture2D" uid="uid://destxm4tw1vkn" path="res://assets/progress_bar/progress_outline.png" id="2_32i52"]
 [ext_resource type="Texture2D" uid="uid://c1k3h1m2dsshd" path="res://assets/progress_bar/progress_green.png" id="3_qmefa"]
+[ext_resource type="Texture2D" uid="uid://budwjitutynjm" path="res://assets/g18091.png" id="4_5kwsy"]
+[ext_resource type="Texture2D" uid="uid://hsddcpnhj6he" path="res://assets/g15072.png" id="4_avop4"]
+[ext_resource type="Texture2D" uid="uid://c01a7vt161pd5" path="res://assets/g18113.png" id="5_5k3i7"]
+[ext_resource type="Texture2D" uid="uid://boi4de0jatdi5" path="res://assets/g15125.png" id="6_oyd0o"]
 
 [node name="LevelTimer" type="Control"]
 layout_mode = 3
@@ -33,13 +37,19 @@ nine_patch_stretch = true
 texture_over = ExtResource("2_32i52")
 texture_progress = ExtResource("3_qmefa")
 
-[node name="Remaining" type="Label" parent="."]
+[node name="Remaining" type="Label" parent="TimerBar"]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = -63.0
-offset_bottom = 12.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -37.5
+offset_right = 34.0
+offset_bottom = 37.5
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.501961, 0.807843, 0.921569, 1)
 theme_override_colors/font_outline_color = Color(0.12549, 0.356863, 0.541176, 1)
 theme_override_constants/outline_size = 6
@@ -48,4 +58,43 @@ text = "0:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Mute" type="TextureButton" parent="TimerBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -37.5
+offset_right = -502.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_avop4")
+texture_pressed = ExtResource("4_5kwsy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Unmute" type="TextureButton" parent="TimerBar"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -37.5
+offset_right = -502.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_oyd0o")
+texture_pressed = ExtResource("5_5k3i7")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="TimerBar/Mute" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="TimerBar/Unmute" to="." method="_on_unmute_pressed"]

@@ -10,6 +10,8 @@ extends Control
 @onready var bg = $TextureRect2
 @onready var cloud_timer = $CloudTimer
 
+@export var levelup_sound : AudioStreamWAV
+
 var Cloud = preload("res://scenes/game/cloud/cloud.tscn")
 
 
@@ -24,6 +26,7 @@ func _on_all_matched():
 	build_timer.start()
 	tween1.tween_property(left_slide, "position", Vector2(304, 14), .3).set_trans(Tween.TRANS_SINE)
 	tween2.tween_property(right_slide, "position", Vector2(560, 14), .3).set_trans(Tween.TRANS_SINE)
+	AudioManager.play(levelup_sound, 1.0)
 	tween1.tween_property(left_slide, "position", Vector2(-621, 14), .3).set_trans(Tween.TRANS_SINE)
 	tween2.tween_property(right_slide, "position", Vector2(1632, 14), .3).set_trans(Tween.TRANS_SINE)	
 

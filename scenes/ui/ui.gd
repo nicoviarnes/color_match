@@ -20,10 +20,12 @@ func _ready():
 
 
 func _on_play_pressed():
+	ScoreManager.score = 0
 	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
 
 
 func _on_settings_pressed():
+	ScoreManager.score = 0
 	get_tree().change_scene_to_file("res://scenes/ui/settings/settings.tscn")
 
 

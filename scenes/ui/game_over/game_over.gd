@@ -11,6 +11,8 @@ extends Control
 @onready var bg = $TextureRect3
 @onready var cloud_timer = $CloudTimer
 
+@onready var score_label = $Score
+
 var Cloud = preload("res://scenes/game/cloud/cloud.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -18,14 +20,18 @@ func _ready():
 	var anims = [anim1, anim2, anim3, anim4, anim5, anim6]
 	for anim in anims:
 		anim.play("default")
+	
+	score_label.text = "Score: " + str(ScoreManager.score)
 
 
 
 func _on_play_pressed():
+	ScoreManager.score = 0
 	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
 
 
 func _on_menu_pressed():
+	ScoreManager.score = 0
 	get_tree().change_scene_to_file("res://scenes/ui/ui.tscn")
 
 func _on_cloud_timer_timeout():

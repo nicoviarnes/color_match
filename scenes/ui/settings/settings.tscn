@@ -1,8 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://ck14yeevs24gu"]
+[gd_scene load_steps=28 format=3 uid="uid://okbuee2b0cwb"]
 
 [ext_resource type="Script" path="res://scenes/ui/settings/settings.gd" id="1_4a38x"]
 [ext_resource type="Texture2D" uid="uid://da1jfpk3heepp" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_03.png" id="1_p454b"]
-[ext_resource type="Texture2D" uid="uid://ba77ttaupd1ln" path="res://assets/KawaiiCupcakeAssetPack/map/section-sky-1.png" id="2_gn3ye"]
+[ext_resource type="Texture2D" uid="uid://ba77ttaupd1ln" path="res://assets/section-sky-1.png" id="2_jn083"]
 [ext_resource type="Texture2D" uid="uid://c8evdu14xrkmb" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_06.png" id="2_twmaa"]
 [ext_resource type="Texture2D" uid="uid://cu42seoopx7dh" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_04.png" id="3_pd62e"]
 [ext_resource type="PackedScene" uid="uid://by65ps6pypqvf" path="res://scenes/game/cloud/cloud.tscn" id="3_riglm"]
@@ -15,11 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://ba3jlhfj848wj" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_02.png" id="10_1i3ru"]
 [ext_resource type="Texture2D" uid="uid://dn6qiontqfpsu" path="res://assets/cupcakes/solid_green_dollop/solid_green_dollop_02.png" id="11_oh0pj"]
 [ext_resource type="Texture2D" uid="uid://c7dp2lcw1igt6" path="res://assets/cupcakes/solid_green_dollop/solid_green_dollop_01.png" id="12_8je5i"]
-[ext_resource type="Texture2D" uid="uid://cejp3cf4su8fu" path="res://assets/KawaiiCupcakeAssetPack/UI/window2-blue.png" id="13_sjlt0"]
-[ext_resource type="Texture2D" uid="uid://c35e2pymeqacj" path="res://assets/KawaiiCupcakeAssetPack/boardElements/opaque/g1586.png" id="15_2iqyq"]
+[ext_resource type="Texture2D" uid="uid://cejp3cf4su8fu" path="res://assets/window2-blue.png" id="15_t10px"]
 [ext_resource type="FontFile" uid="uid://b8n40e88ns21u" path="res://assets/Fredoka/static/Fredoka-Bold.ttf" id="16_maao0"]
-[ext_resource type="Texture2D" uid="uid://bfd5lnqqbk1d7" path="res://assets/KawaiiCupcakeAssetPack/UI/buttons-blue/g15535.png" id="17_pc4ox"]
-[ext_resource type="Texture2D" uid="uid://dihj4fnwadl6u" path="res://assets/KawaiiCupcakeAssetPack/UI/buttons-blue/pressed/g18213.png" id="18_5os7m"]
+[ext_resource type="Texture2D" uid="uid://c35e2pymeqacj" path="res://assets/g1586.png" id="18_5a75y"]
+[ext_resource type="Texture2D" uid="uid://dihj4fnwadl6u" path="res://assets/g18213.png" id="19_vqv24"]
+[ext_resource type="Texture2D" uid="uid://bfd5lnqqbk1d7" path="res://assets/g15535.png" id="19_xv57u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_47gps"]
 animations = [{
@@ -143,7 +143,7 @@ offset_right = 466.0
 offset_bottom = 669.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_gn3ye")
+texture = ExtResource("2_jn083")
 
 [node name="Cloud" parent="TextureRect3" instance=ExtResource("3_riglm")]
 position = Vector2(2032, 1404)
@@ -207,7 +207,7 @@ vertical_alignment = 1
 [node name="Window2-blue" type="Sprite2D" parent="."]
 position = Vector2(575.5, 362)
 scale = Vector2(0.21308, 0.185654)
-texture = ExtResource("13_sjlt0")
+texture = ExtResource("15_t10px")
 
 [node name="Label" type="Label" parent="Window2-blue"]
 anchors_preset = 8
@@ -242,9 +242,9 @@ offset_right = -174.5
 offset_bottom = -786.954
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_icons/grabber = ExtResource("15_2iqyq")
-theme_override_icons/grabber_highlight = ExtResource("15_2iqyq")
-theme_override_icons/grabber_disabled = ExtResource("15_2iqyq")
+theme_override_icons/grabber = ExtResource("18_5a75y")
+theme_override_icons/grabber_highlight = ExtResource("18_5a75y")
+theme_override_icons/grabber_disabled = ExtResource("18_5a75y")
 theme_override_styles/slider = SubResource("StyleBoxFlat_5dso0")
 max_value = 1.0
 step = 0.05
@@ -283,9 +283,9 @@ offset_right = -174.5
 offset_bottom = -189.068
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_icons/grabber = ExtResource("15_2iqyq")
-theme_override_icons/grabber_highlight = ExtResource("15_2iqyq")
-theme_override_icons/grabber_disabled = ExtResource("15_2iqyq")
+theme_override_icons/grabber = ExtResource("18_5a75y")
+theme_override_icons/grabber_highlight = ExtResource("18_5a75y")
+theme_override_icons/grabber_disabled = ExtResource("18_5a75y")
 theme_override_styles/slider = SubResource("StyleBoxFlat_5dso0")
 max_value = 1.0
 step = 0.05
@@ -304,8 +304,8 @@ offset_right = 93.0
 offset_bottom = 266.5
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("17_pc4ox")
-texture_pressed = ExtResource("18_5os7m")
+texture_normal = ExtResource("19_xv57u")
+texture_pressed = ExtResource("19_vqv24")
 ignore_texture_size = true
 stretch_mode = 0
 

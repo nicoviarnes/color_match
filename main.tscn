@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cac4ldwstus35"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_o4sl0"]
-[ext_resource type="PackedScene" uid="uid://bqptreylng451" path="res://scenes/ui/ui.tscn" id="1_yg5lw"]
+[ext_resource type="PackedScene" uid="uid://ccgghioicvjku" path="res://scenes/ui/ui.tscn" id="1_yg5lw"]
 [ext_resource type="AudioStream" uid="uid://bf0numsgj46pq" path="res://assets/sound/Wav/High End Party.wav" id="2_r5q3q"]
 
 [node name="Main" type="Control"]
