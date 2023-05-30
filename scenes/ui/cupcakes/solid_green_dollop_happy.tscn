@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcu3euevue277"]
+
+[ext_resource type="Texture2D" uid="uid://c8npg65t4im5x" path="res://solid_green_dollop.tres" id="1_8geol"]
+[ext_resource type="Script" path="res://scenes/ui/cupcakes/uicupcake.gd" id="2_eylbt"]
+
+[node name="SolidGreenDollopHappy" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8geol")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_eylbt")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

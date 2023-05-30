@@ -1,107 +1,17 @@
-[gd_scene load_steps=25 format=3 uid="uid://mkfcbmtujvxv"]
+[gd_scene load_steps=13 format=3 uid="uid://mkfcbmtujvxv"]
 
 [ext_resource type="Script" path="res://scenes/ui/game_over/game_over.gd" id="1_f4ejs"]
-[ext_resource type="Texture2D" uid="uid://dnl8x5q2iiv12" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_07.png" id="2_8ufip"]
 [ext_resource type="Texture2D" uid="uid://ba77ttaupd1ln" path="res://assets/section-sky-1.png" id="2_hcs3m"]
-[ext_resource type="Texture2D" uid="uid://cbvy0opxx8aq4" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_05.png" id="3_j640u"]
 [ext_resource type="PackedScene" uid="uid://by65ps6pypqvf" path="res://scenes/game/cloud/cloud.tscn" id="3_m4q3q"]
-[ext_resource type="Texture2D" uid="uid://bq03krwr3k2gq" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_05.png" id="4_m4vk2"]
-[ext_resource type="Texture2D" uid="uid://bvhnav5wgyhrd" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_07.png" id="5_6tfc3"]
-[ext_resource type="Texture2D" uid="uid://cmndlgksqpv5r" path="res://assets/cupcakes/solid_pink_dollop/solid_pink_dollop_05.png" id="6_ca436"]
-[ext_resource type="Texture2D" uid="uid://e7ideanx8lpm" path="res://assets/cupcakes/solid_pink_dollop/solid_pink_dollop_07.png" id="7_o0l11"]
-[ext_resource type="Texture2D" uid="uid://c0bu2gbyswau6" path="res://assets/cupcakes/solid_orange_dollop/solid_orange_dollop_07.png" id="8_iwomp"]
-[ext_resource type="Texture2D" uid="uid://cfenvyvpigv1c" path="res://assets/cupcakes/solid_orange_dollop/solid_orange_dollop_05.png" id="9_g6hj2"]
-[ext_resource type="Texture2D" uid="uid://cp1hg7y217g0q" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_07.png" id="10_rb35i"]
-[ext_resource type="Texture2D" uid="uid://cgtg2cimbs7g7" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_05.png" id="11_ga5sd"]
-[ext_resource type="Texture2D" uid="uid://dvpe766b7i86x" path="res://assets/cupcakes/solid_green_dollop/solid_green_dollop_07.png" id="12_vjq8g"]
-[ext_resource type="Texture2D" uid="uid://5e3ntglyp6c6" path="res://assets/cupcakes/solid_green_dollop/solid_green_dollop_05.png" id="13_3vdxm"]
+[ext_resource type="PackedScene" uid="uid://dk6f72amqtpfo" path="res://scenes/ui/cupcakes/solid_blue_dollop_happy.tscn" id="7_vfs1i"]
+[ext_resource type="PackedScene" uid="uid://bcu3euevue277" path="res://scenes/ui/cupcakes/solid_green_dollop_happy.tscn" id="8_b2sao"]
+[ext_resource type="PackedScene" uid="uid://dgt2esjv0tka1" path="res://scenes/ui/cupcakes/solid_lime_dollop_happy.tscn" id="9_vel5a"]
+[ext_resource type="PackedScene" uid="uid://bgptinrbvsdmj" path="res://scenes/ui/cupcakes/solid_orange_dollop_happy.tscn" id="10_xy6dq"]
+[ext_resource type="PackedScene" uid="uid://26vnsxaodoge" path="res://scenes/ui/cupcakes/solid_pink_dollop_happy.tscn" id="11_2xieh"]
+[ext_resource type="PackedScene" uid="uid://d0f3dp66tf40v" path="res://scenes/ui/cupcakes/solid_salmon_dollop_happy.tscn" id="12_nok6t"]
 [ext_resource type="Texture2D" uid="uid://cejp3cf4su8fu" path="res://assets/window2-blue.png" id="15_t4ks5"]
 [ext_resource type="Texture2D" uid="uid://bfd5lnqqbk1d7" path="res://assets/g15535.png" id="17_4p5k5"]
 [ext_resource type="Texture2D" uid="uid://dihj4fnwadl6u" path="res://assets/g18213.png" id="17_d0yjr"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8lrxc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_8ufip")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_j640u")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_coxql"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_m4vk2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_6tfc3")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nks7m"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_ca436")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_o0l11")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ctx5s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_iwomp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_g6hj2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wb6fq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_rb35i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_ga5sd")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qgaah"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_vjq8g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_3vdxm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -133,57 +43,17 @@ wait_time = 8.0
 one_shot = true
 autostart = true
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-position = Vector2(942, 301)
-rotation = -0.0606891
-sprite_frames = SubResource("SpriteFrames_8lrxc")
-frame_progress = 0.114737
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(849, 449)
-rotation = -0.129992
-sprite_frames = SubResource("SpriteFrames_coxql")
-frame_progress = 0.706393
-
-[node name="SolidPinkDollop07" type="AnimatedSprite2D" parent="."]
-position = Vector2(1029, 479)
-rotation = 0.129268
-sprite_frames = SubResource("SpriteFrames_nks7m")
-frame_progress = 0.198926
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(193, 301)
-rotation = 0.0425317
-sprite_frames = SubResource("SpriteFrames_ctx5s")
-frame_progress = 0.930631
-
-[node name="SolidBlueDollop04" type="AnimatedSprite2D" parent="."]
-position = Vector2(126, 487)
-rotation = -0.23911
-sprite_frames = SubResource("SpriteFrames_wb6fq")
-frame_progress = 0.0293772
-
-[node name="SolidGreenDollop06" type="AnimatedSprite2D" parent="."]
-position = Vector2(308, 438)
-rotation = 0.120428
-sprite_frames = SubResource("SpriteFrames_qgaah")
-frame_progress = 0.561993
-
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -579.0
-offset_top = -334.5
-offset_right = 579.0
-offset_bottom = -127.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -3.0
+offset_top = -10.5
+offset_right = 1155.0
+offset_bottom = 196.5
 theme_override_colors/font_color = Color(0.501961, 0.807843, 0.921569, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.431373)
 theme_override_colors/font_outline_color = Color(0.12549, 0.356863, 0.541176, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 160
 text = "Game Over
@@ -229,6 +99,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.501961, 0.807843, 0.921569, 1)
 theme_override_colors/font_outline_color = Color(0.12549, 0.356863, 0.541176, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 48
 text = "Play Again"
@@ -268,6 +140,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.501961, 0.807843, 0.921569, 1)
 theme_override_colors/font_outline_color = Color(0.12549, 0.356863, 0.541176, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 48
 text = "Menu"
@@ -288,12 +162,61 @@ offset_bottom = -91.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.501961, 0.807843, 0.921569, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.431373)
 theme_override_colors/font_outline_color = Color(0.12549, 0.356863, 0.541176, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 64
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SolidOrangeDollopHappy" parent="." instance=ExtResource("10_xy6dq")]
+layout_mode = 0
+offset_left = 801.0
+offset_top = 207.0
+offset_right = 1001.0
+offset_bottom = 407.0
+
+[node name="SolidPinkDollopHappy" parent="." instance=ExtResource("11_2xieh")]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 299.0
+offset_right = 1101.0
+offset_bottom = 499.0
+rotation = 0.183333
+
+[node name="SolidSalmonDollopHappy" parent="." instance=ExtResource("12_nok6t")]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 380.0
+offset_right = 900.0
+offset_bottom = 580.0
+rotation = -0.33075
+
+[node name="SolidBlueDollopHappy" parent="." instance=ExtResource("7_vfs1i")]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 207.0
+offset_right = 362.0
+offset_bottom = 407.0
+
+[node name="SolidGreenDollopHappy" parent="." instance=ExtResource("8_b2sao")]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 334.0
+offset_right = 438.0
+offset_bottom = 534.0
+rotation = 0.129008
+
+[node name="SolidLimeDollopHappy" parent="." instance=ExtResource("9_vel5a")]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 362.0
+offset_right = 252.0
+offset_bottom = 562.0
+rotation = -0.237359
 
 [connection signal="timeout" from="CloudTimer" to="." method="_on_cloud_timer_timeout"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

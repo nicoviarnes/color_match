@@ -1,0 +1,25 @@
+[gd_resource type="AnimatedTexture" load_steps=8 format=3 uid="uid://k0suewe20h3k"]
+
+[ext_resource type="Texture2D" uid="uid://bd8lntxmdg0jh" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_01.png" id="1_vbpga"]
+[ext_resource type="Texture2D" uid="uid://dvdk0dih5ffaw" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_02.png" id="2_tpogn"]
+[ext_resource type="Texture2D" uid="uid://da1jfpk3heepp" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_03.png" id="3_q13tm"]
+[ext_resource type="Texture2D" uid="uid://cwnr3c5ydkopj" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_04.png" id="4_3fjvi"]
+[ext_resource type="Texture2D" uid="uid://cbvy0opxx8aq4" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_05.png" id="5_p1ino"]
+[ext_resource type="Texture2D" uid="uid://c8evdu14xrkmb" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_06.png" id="6_4q2od"]
+[ext_resource type="Texture2D" uid="uid://dnl8x5q2iiv12" path="res://assets/cupcakes/solid_lime_dollop/solid_lime_dollop_07.png" id="7_pawos"]
+
+[resource]
+frames = 7
+frame_0/texture = ExtResource("1_vbpga")
+frame_1/texture = ExtResource("2_tpogn")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_q13tm")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_3fjvi")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_p1ino")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_4q2od")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("7_pawos")
+frame_6/duration = 1.0

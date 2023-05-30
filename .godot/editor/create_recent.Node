@@ -1,10 +1,10 @@
-TextureButton
-Timer
-Sprite2D
 TextureRect
+Timer
+AnimatedSprite2D
+Sprite2D
+TextureButton
 Label
 HSlider
-AnimatedSprite2D
 ColorRect
 CPUParticles2D
 TextureProgressBar

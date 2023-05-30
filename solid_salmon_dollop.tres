@@ -1,0 +1,25 @@
+[gd_resource type="AnimatedTexture" load_steps=8 format=3 uid="uid://btw75u17jsnr2"]
+
+[ext_resource type="Texture2D" uid="uid://d2kxe1ofpu48y" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_01.png" id="1_57g5u"]
+[ext_resource type="Texture2D" uid="uid://sgmws4vvpido" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_02.png" id="2_dymjt"]
+[ext_resource type="Texture2D" uid="uid://c60ps5akp8jqs" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_03.png" id="3_b6osy"]
+[ext_resource type="Texture2D" uid="uid://cu42seoopx7dh" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_04.png" id="4_rcg6y"]
+[ext_resource type="Texture2D" uid="uid://bq03krwr3k2gq" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_05.png" id="5_4ut2h"]
+[ext_resource type="Texture2D" uid="uid://bucwgk5cqw6tt" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_06.png" id="6_5f056"]
+[ext_resource type="Texture2D" uid="uid://bvhnav5wgyhrd" path="res://assets/cupcakes/solid_salmon_dollop/solid_salmon_dollop_07.png" id="7_v1q56"]
+
+[resource]
+frames = 7
+frame_0/texture = ExtResource("1_57g5u")
+frame_1/texture = ExtResource("2_dymjt")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_b6osy")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_rcg6y")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_4ut2h")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_5f056")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("7_v1q56")
+frame_6/duration = 1.0

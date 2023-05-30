@@ -1,1 +1,3 @@
+AnimatedTexture
+Texture2DArray
 Theme

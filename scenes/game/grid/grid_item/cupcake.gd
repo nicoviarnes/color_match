@@ -6,10 +6,19 @@ var cupcake_type : String
 @onready var smile_timer = $SmileTimer
 @onready var blink_timer = $BlinkTimer
 @onready var card_back = $Cardback
+@onready var match_timer = $MatchTimer
 
+@export var pop : PackedScene
 @export var click_sound : AudioStreamWAV
 @export var particles : PackedScene
 @export var mouseover_sound : AudioStreamWAV
+
+@export var solid_blue_dollop : AnimatedTexture
+@export var solid_green_dollop : AnimatedTexture
+@export var solid_lime_dollop : AnimatedTexture
+@export var solid_orange_dollop : AnimatedTexture
+@export var solid_pink_dollop : AnimatedTexture
+@export var solid_salmon_dollop : AnimatedTexture
 
 var flipped : bool = false
 var matched : bool = false
@@ -18,12 +27,34 @@ signal selected(node)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var texture_directory = "res://assets/cupcakes/" + cupcake_type + "/"
-	for i in 7:
-		var cupcake = texture_directory + cupcake_type + "_0" + str(i + 1) + ".png"
-		texture.set_frame_texture(i, load(cupcake))
+	match cupcake_type:
+		"solid_blue_dollop":
+			var tex = AnimatedTexture.new()
+			tex = solid_blue_dollop
+			texture = tex
+		"solid_green_dollop":
+			var tex = AnimatedTexture.new()
+			tex = solid_green_dollop
+			texture = tex
+		"solid_lime_dollop":
+			var tex = AnimatedTexture.new()
+			tex = solid_lime_dollop
+			texture = tex
+		"solid_orange_dollop":
+			var tex = AnimatedTexture.new()
+			tex = solid_orange_dollop
+			texture = tex
+		"solid_pink_dollop":
+			var tex = AnimatedTexture.new()
+			tex = solid_pink_dollop
+			texture = tex
+		"solid_salmon_dollop":
+			var tex = AnimatedTexture.new()
+			tex = solid_salmon_dollop
+			texture = tex
+
 	texture.pause = true
-	
+
 
 func resolve_match():
 	smile_timer.stop()
@@ -37,6 +68,7 @@ func resolve_match():
 	var particle = particles.instantiate()
 	particle.position = size / 2
 	add_child(particle)
+	match_timer.start()
 
 
 func flip_card(clear):
@@ -79,3 +111,8 @@ func _on_smile_timer_timeout():
 func _on_blink_timer_timeout():
 	texture.current_frame = 1
 	smile_timer.start()
+
+
+func _on_match_timer_timeout():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate", Color(1,1,1,0), .5).set_trans(Tween.TRANS_SINE)

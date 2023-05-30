@@ -1,14 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw17dcilpdns4"]
+[gd_scene load_steps=16 format=3 uid="uid://dw17dcilpdns4"]
 
 [ext_resource type="Script" path="res://scenes/game/grid/grid_item/cupcake.gd" id="1_pam1o"]
 [ext_resource type="AudioStream" uid="uid://wos8t7wgk6yo" path="res://assets/sound/Wav/Confirm_tones/style2/confirm_style_2_005.wav" id="2_8bu0d"]
 [ext_resource type="PackedScene" path="res://scenes/game/grid/grid_item/match_particles.tscn" id="3_ao5rf"]
 [ext_resource type="AudioStream" uid="uid://dx2pfauo8omt0" path="res://assets/sound/Wav/Cursor_tones/cursor_style_2.wav" id="4_118sn"]
 [ext_resource type="Texture2D" uid="uid://q78778tc0dk2" path="res://assets/cupcakes/cardback.png" id="5_hvc0d"]
+[ext_resource type="Texture2D" uid="uid://j8wwq52gy6br" path="res://solid_blue_dollop.tres" id="5_xbheg"]
+[ext_resource type="Texture2D" uid="uid://c8npg65t4im5x" path="res://solid_green_dollop.tres" id="6_rtw6n"]
 [ext_resource type="Shader" path="res://assets/shaders/glow.gdshader" id="6_t56fx"]
+[ext_resource type="Texture2D" uid="uid://k0suewe20h3k" path="res://solid_lime_dollop.tres" id="7_s2mkq"]
+[ext_resource type="Texture2D" uid="uid://b547suowe0b38" path="res://solid_orange_dollop.tres" id="8_0pqup"]
+[ext_resource type="Texture2D" uid="uid://cfqjbg40ovoom" path="res://solid_pink_dollop.tres" id="9_43jpp"]
+[ext_resource type="Texture2D" uid="uid://btw75u17jsnr2" path="res://solid_salmon_dollop.tres" id="10_7fv86"]
+[ext_resource type="PackedScene" uid="uid://bpkawg57cqx2r" path="res://scenes/game/grid/grid_item/pop/pop.tscn" id="13_47r75"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_whem8"]
-resource_local_to_scene = true
 frames = 7
 frame_1/duration = 1.0
 frame_2/duration = 1.0
@@ -38,9 +44,16 @@ texture = SubResource("AnimatedTexture_whem8")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("1_pam1o")
+pop = ExtResource("13_47r75")
 click_sound = ExtResource("2_8bu0d")
 particles = ExtResource("3_ao5rf")
 mouseover_sound = ExtResource("4_118sn")
+solid_blue_dollop = ExtResource("5_xbheg")
+solid_green_dollop = ExtResource("6_rtw6n")
+solid_lime_dollop = ExtResource("7_s2mkq")
+solid_orange_dollop = ExtResource("8_0pqup")
+solid_pink_dollop = ExtResource("9_43jpp")
+solid_salmon_dollop = ExtResource("10_7fv86")
 
 [node name="Cardback" type="TextureRect" parent="."]
 layout_mode = 1
@@ -75,8 +88,13 @@ one_shot = true
 [node name="BlinkTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="MatchTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="timeout" from="SmileTimer" to="." method="_on_smile_timer_timeout"]
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]
+[connection signal="timeout" from="MatchTimer" to="." method="_on_match_timer_timeout"]

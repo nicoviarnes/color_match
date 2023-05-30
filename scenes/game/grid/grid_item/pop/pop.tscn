@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpkawg57cqx2r"]
+
+[ext_resource type="Texture2D" uid="uid://bqwam574sney3" path="res://assets/pop1.png" id="1_emoha"]
+[ext_resource type="Texture2D" uid="uid://bce07ehnr2o5p" path="res://assets/pop2.png" id="2_r7a0j"]
+[ext_resource type="Texture2D" uid="uid://bk0s665lhkonr" path="res://assets/pop3.png" id="3_601ru"]
+[ext_resource type="Texture2D" uid="uid://wvvwyxof16w" path="res://assets/pop4.png" id="4_oampn"]
+[ext_resource type="Script" path="res://scenes/game/grid/grid_item/pop.gd" id="5_4bhfa"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_luh6m"]
+frames = 4
+frame_0/texture = ExtResource("1_emoha")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_r7a0j")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_601ru")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("4_oampn")
+frame_3/duration = 0.1
+
+[node name="Pop" type="TextureRect"]
+visible = false
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_luh6m")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_4bhfa")
+
+[node name="PopTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="PopTimer" to="." method="_on_pop_timer_timeout"]

@@ -1,13 +1,14 @@
-C:/Users/Nico/code/godot_projects/color_match/cupcakeMatchHTML
+C:/Users/Nico/code/godot_projects/color_match/export
+res://scenes/game/grid/grid_item/pop
+res://
+res://scenes/ui/cupcakes
 res://scripts
 res://scenes/game/cloud
 res://assets/Fredoka/static
 res://scenes/ui/settings
 res://assets/cupcakes/solid_pink_dollop
-res://
 res://assets/shaders
 res://assets
-res://scenes/game/grid/memory
 res://assets/cupcakes/solid_green_dollop
 res://scenes/ui/game_over
 res://scenes/game/level_timer

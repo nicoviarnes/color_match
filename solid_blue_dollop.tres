@@ -1,0 +1,25 @@
+[gd_resource type="AnimatedTexture" load_steps=8 format=3 uid="uid://j8wwq52gy6br"]
+
+[ext_resource type="Texture2D" uid="uid://dxirjscph1yy0" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_01.png" id="1_heu23"]
+[ext_resource type="Texture2D" uid="uid://ba3jlhfj848wj" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_02.png" id="2_xgmdh"]
+[ext_resource type="Texture2D" uid="uid://bajcfuh37mhqj" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_03.png" id="3_k6shn"]
+[ext_resource type="Texture2D" uid="uid://c0bsjf4i0e6qp" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_04.png" id="4_1jjrt"]
+[ext_resource type="Texture2D" uid="uid://cgtg2cimbs7g7" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_05.png" id="5_i3bl0"]
+[ext_resource type="Texture2D" uid="uid://xmsj22c6v072" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_06.png" id="6_x53cl"]
+[ext_resource type="Texture2D" uid="uid://cp1hg7y217g0q" path="res://assets/cupcakes/solid_blue_dollop/solid_blue_dollop_07.png" id="7_wcw7t"]
+
+[resource]
+frames = 7
+frame_0/texture = ExtResource("1_heu23")
+frame_1/texture = ExtResource("2_xgmdh")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_k6shn")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_1jjrt")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_i3bl0")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_x53cl")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("7_wcw7t")
+frame_6/duration = 1.0
